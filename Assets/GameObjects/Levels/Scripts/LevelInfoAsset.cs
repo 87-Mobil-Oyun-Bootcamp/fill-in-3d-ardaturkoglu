@@ -15,4 +15,5 @@ public struct LevelInfo
     public Sprite sprite;
     public float size;
     public GameObject baseObj;
+    public GameObject fillObj;
 }

@@ -17,3 +17,5 @@ MonoBehaviour:
     size: 0.3
     baseObj: {fileID: 3850588218083766758, guid: 515f8eec53dfb4134847f36be359befb,
       type: 3}
+    fillObj: {fileID: 3850588218083766758, guid: 4e3f190d124ba84449595e1364c18faa,
+      type: 3}
