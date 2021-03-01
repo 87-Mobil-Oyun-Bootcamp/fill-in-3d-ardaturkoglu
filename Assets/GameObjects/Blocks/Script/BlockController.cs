@@ -57,4 +57,5 @@ public class BlockController : MonoBehaviour
         OnCreated += LevelManager.Instance.OnBlockCreated;
         OnCollected += LevelManager.Instance.OnBlockCollected;
     }
+    
 }
