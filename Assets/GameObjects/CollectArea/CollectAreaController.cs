@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CollectAreaController : MonoBehaviour
 {
+    BlockSpawner blockSpawner = new BlockSpawner();
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Block"))

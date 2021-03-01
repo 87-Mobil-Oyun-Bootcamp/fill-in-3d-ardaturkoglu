@@ -10,6 +10,7 @@ public enum BlockState
 
 public class BlockController : MonoBehaviour
 {
+    private bool isHit = true;
     public BlockState BlockState
     {
         get
@@ -57,5 +58,22 @@ public class BlockController : MonoBehaviour
         OnCreated += LevelManager.Instance.OnBlockCreated;
         OnCollected += LevelManager.Instance.OnBlockCollected;
     }
-    
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Block") && isHit)
+        {
+            isHit = false;
+            Debug.Log("Hit");
+            Destroy(this.gameObject);
+            other.GetComponent<Renderer>().material.color = Color.yellow;
+            other.GetComponent<Collider>().enabled = false;
+            var blockController = other.GetComponent<BlockController>();
+
+            if (blockController)
+            {
+                blockController.BlockState = BlockState.Collected;
+            }
+        }
+    }
 }

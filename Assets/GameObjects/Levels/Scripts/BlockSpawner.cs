@@ -7,9 +7,10 @@ public class BlockSpawner : MonoBehaviour
     Vector3 blockPos = Vector3.zero;
     int totalSize = 0;
 
-    public List<GameObject> CreateBlockFromImage(LevelInfo levelInfo, Transform transform)
+    public Dictionary<GameObject, Color> CreateBlockFromImage(LevelInfo levelInfo, Transform transform)
     {
-        List<GameObject> createdCubes = new List<GameObject>();
+        
+        Dictionary<GameObject, Color> cubeColors = new Dictionary<GameObject, Color>();
 
         for (int x = 0; x < levelInfo.sprite.texture.width; x++)
         {
@@ -33,11 +34,11 @@ public class BlockSpawner : MonoBehaviour
                 cubeObj.GetComponent<Renderer>().material.color = Color.gray;
                 cubeObj.transform.localScale = Vector3.one * levelInfo.size;
 
-                createdCubes.Add(cubeObj);
+                cubeColors.Add(cubeObj, color);
             }
         }
 
-        return createdCubes;
+        return cubeColors;
     }
 
     public List<GameObject> CreateFillBlock(LevelInfo levelInfo, Transform transform, Transform start)
