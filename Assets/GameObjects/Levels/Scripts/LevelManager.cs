@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
     List<BlockController> createdBlocks = new List<BlockController>();
     List<BlockController> collectedBlocks = new List<BlockController>();
 
+
     private void Awake()
     {
         if (instance == null)

@@ -6,11 +6,12 @@ public class BlockSpawner : MonoBehaviour
 {
     Vector3 blockPos = Vector3.zero;
     int totalSize = 0;
+    [HideInInspector]
+    public static Dictionary<GameObject, Color> cubeColors;
 
     public Dictionary<GameObject, Color> CreateBlockFromImage(LevelInfo levelInfo, Transform transform)
     {
-        
-        Dictionary<GameObject, Color> cubeColors = new Dictionary<GameObject, Color>();
+        cubeColors  = new Dictionary<GameObject, Color>();
 
         for (int x = 0; x < levelInfo.sprite.texture.width; x++)
         {

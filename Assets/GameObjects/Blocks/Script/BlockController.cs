@@ -10,6 +10,7 @@ public enum BlockState
 
 public class BlockController : MonoBehaviour
 {
+    Dictionary<GameObject, Color> cubeColors = BlockSpawner.cubeColors;
     private bool isHit = true;
     public BlockState BlockState
     {
@@ -66,7 +67,7 @@ public class BlockController : MonoBehaviour
             isHit = false;
             Debug.Log("Hit");
             Destroy(this.gameObject);
-            other.GetComponent<Renderer>().material.color = Color.yellow;
+            other.GetComponent<Renderer>().material.color = cubeColors[other.gameObject];
             other.GetComponent<Collider>().enabled = false;
             var blockController = other.GetComponent<BlockController>();
 
