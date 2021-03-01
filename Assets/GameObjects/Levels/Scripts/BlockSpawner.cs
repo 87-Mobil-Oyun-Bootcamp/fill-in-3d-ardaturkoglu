@@ -5,9 +5,11 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     Vector3 blockPos = Vector3.zero;
-    int totalSize = 0;
+    
     [HideInInspector]
     public static Dictionary<GameObject, Color> cubeColors;
+    public int totalSize = 0;
+    public int count = 0;
 
     public Dictionary<GameObject, Color> CreateBlockFromImage(LevelInfo levelInfo, Transform transform)
     {
@@ -45,7 +47,7 @@ public class BlockSpawner : MonoBehaviour
     public List<GameObject> CreateFillBlock(LevelInfo levelInfo, Transform transform, Transform start)
     {
         List<GameObject> fillCubes = new List<GameObject>();
-        int count = 0;
+        
         Debug.Log("Total Block No : " + totalSize);
         for (int x = 0; x < totalSize; x++)
         {
