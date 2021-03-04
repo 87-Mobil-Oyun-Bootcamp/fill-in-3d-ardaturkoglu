@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0))
         {
