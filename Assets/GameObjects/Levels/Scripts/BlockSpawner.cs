@@ -51,7 +51,7 @@ public class BlockSpawner : MonoBehaviour
         Debug.Log("Total Block No : " + totalSize);
         for (int x = 0; x < totalSize; x++)
         {
-            for (int y = 0; y < 10 ; y++)
+            for (int y = 0; y < 16 ; y++)
             {
                 if (count == totalSize)
                     break;
