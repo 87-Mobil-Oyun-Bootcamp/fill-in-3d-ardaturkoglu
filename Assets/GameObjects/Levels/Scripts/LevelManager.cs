@@ -44,6 +44,23 @@ public class LevelManager : MonoBehaviour
 
         blockSpawner = GetComponent<BlockSpawner>();
     }
+    public void Update()
+    {
+        HandleCurrentLevel();
+    }
+    public bool HandleCurrentLevel()
+    {
+        if (BlockSpawner.filledCubes < BlockSpawner.totalSize)
+        {
+            Debug.Log($"{BlockSpawner.filledCubes} / { BlockSpawner.totalSize} <- Collected Block Count");
+            return false;
+        }
+        else
+            Debug.Log("Level Finished.");
+        return true;
+
+        
+    }
 
     public bool HandleCreateNextLevel()
     {

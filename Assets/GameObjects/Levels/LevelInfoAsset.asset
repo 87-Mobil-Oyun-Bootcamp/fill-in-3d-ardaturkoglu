@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelInfoAsset
   m_EditorClassIdentifier: 
   levelInfos:
-  - sprite: {fileID: 21300000, guid: cfc030d5d6945684bb2975942ae34a51, type: 3}
+  - sprite: {fileID: 21300000, guid: d70ac5ac48a97b3428189b09a5158452, type: 3}
     size: 0.3
     baseObj: {fileID: 3850588218083766758, guid: 515f8eec53dfb4134847f36be359befb,
       type: 3}

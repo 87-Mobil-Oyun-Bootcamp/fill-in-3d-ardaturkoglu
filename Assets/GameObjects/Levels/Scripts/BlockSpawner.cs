@@ -8,8 +8,12 @@ public class BlockSpawner : MonoBehaviour
     
     [HideInInspector]
     public static Dictionary<GameObject, Color> cubeColors;
-    public int totalSize = 0;
+    [HideInInspector]
+    public static int totalSize = 0;
+    [HideInInspector]
     public int count = 0;
+    [HideInInspector]
+    public static int filledCubes = 0;
 
     public Dictionary<GameObject, Color> CreateBlockFromImage(LevelInfo levelInfo, Transform transform)
     {

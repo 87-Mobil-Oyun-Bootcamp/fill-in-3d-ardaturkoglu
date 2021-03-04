@@ -11,6 +11,7 @@ public enum BlockState
 public class BlockController : MonoBehaviour
 {
     Dictionary<GameObject, Color> cubeColors = BlockSpawner.cubeColors;
+    
     private bool isHit = true;
     public BlockState BlockState
     {
@@ -65,16 +66,10 @@ public class BlockController : MonoBehaviour
         if (other.CompareTag("Block") && isHit)
         {
             isHit = false;
-            Debug.Log("Hit");
             Destroy(this.gameObject);
             other.GetComponent<Renderer>().material.color = cubeColors[other.gameObject];
             other.GetComponent<Collider>().enabled = false;
-            var blockController = other.GetComponent<BlockController>();
-
-            if (blockController)
-            {
-                blockController.BlockState = BlockState.Collected;
-            }
+            BlockSpawner.filledCubes += 1;
         }
     }
 }
